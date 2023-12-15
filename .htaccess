@@ -1,3 +1,7 @@
-RewriteEngine On
-RewriteRule ^([a-z0-9A-Z]+)$ index.php?modulo1=$1
-RewriteRule ^([a-z0-9A-Z]+)\/([a-z0-9A-Z]+)$ index.php?modulo1=$1&modulo2=$2
+RewriteEngine   On
+RewriteBase     /loginator/
+RewriteCond     %{REQUEST_FILENAME} !-f
+RewriteCond     %{REQUEST_FILENAME} !-d
+#RewriteRule     .               /loginator/index.php              [L]
+RewriteRule ^([a-z0-9A-Z]+)$ home.php?modulo1=$1
+RewriteRule ^([a-z0-9A-Z]+)\/([a-z0-9A-Z]+)$ home.php?modulo1=$1&modulo2=$2
